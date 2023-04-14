@@ -1,6 +1,11 @@
 @import "~normalize.css/normalize.css"
 
 $white: #fff
+$black: #14171A
+$dark-gray: #657786
+$gray: #AAB8C2
+$light-gray: #E1E8ED
+$extra-light-gray: #F5F8FA
 $link-color: #c9c9c9
 
 *
@@ -31,6 +36,26 @@ body
   align-items: center
   background: rgba(0, 0, 0, 0.2)
   color: #f1f1f1
+
+.searchbar-container
+  width: 300px
+  
+  input
+    width: 100%
+    padding: 10px
+    color: $light-gray
+    background: transparent
+    border: transparent
+    transition: .3s
+
+    &:focus, &:hover
+      outline: none
+      border-bottom: 1px solid $gray
+
+    &::placeholder
+      color: $gray
+    
+
 
 .footer
   height: 40px
