@@ -1,7 +1,7 @@
 {
 	"name": "weather-app",
 	"version": "1.0.0",
-	"description": "![alt text](img/webpage-screenshot.jpg)",
+	"description": "![alt text](dist/img/webpage-screenshot.jpg)",
 	"main": "webpack.config.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -12,15 +12,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/Praesidi/weather-app.git"
+		"url": "git+https://github.com/praesidi/weather-app.git"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/Praesidi/weather-app/issues"
+		"url": "https://github.com/praesidi/weather-app/issues"
 	},
-	"homepage": "https://github.com/Praesidi/weather-app#readme",
+	"homepage": "https://github.com/praesidi/weather-app#readme",
 	"devDependencies": {
 		"css-loader": "^6.7.3",
 		"eslint": "^8.35.0",
