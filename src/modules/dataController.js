@@ -1,3 +1,5 @@
+import domController from './domController';
+
 const dataController = (() => {
 	const apiKey = '52a94c4a83484cb1a15122652230904';
 	let userLocation;
@@ -26,6 +28,7 @@ const dataController = (() => {
 
 	const getWeatherData = async () => {
 		try {
+			domController.showLoadingSpinner();
 			const response = await fetch(
 				`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${userLocation}&aqi=no&alerts=no`
 			);

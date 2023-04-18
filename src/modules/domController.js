@@ -50,6 +50,15 @@ const domController = (() => {
 		return error;
 	};
 
+	const createGreetingMessage = () => {
+		const error = String.raw`
+			<h1 style="text-align: center;">Welcome to the Weather App!</h1>
+			<h3 style="text-align: center;">Please select a location to get weather information</h3>
+		`;
+
+		return error;
+	};
+
 	const populateWeatherContainer = (obj, format) => {
 		weatherContainer.textContent = '';
 		weatherContainer.innerHTML = createWeatherWidget(obj, format);
@@ -60,8 +69,20 @@ const domController = (() => {
 		weatherContainer.innerHTML = createErrorMessage();
 	};
 
+	const showGreetingMessage = () => {
+		weatherContainer.textContent = '';
+		weatherContainer.innerHTML = createGreetingMessage();
+	};
+
+	const showLoadingSpinner = () => {
+		weatherContainer.textContent = '';
+		weatherContainer.innerHTML = '<span class="loader"></span>';
+	};
+
 	return {
 		populateWeatherContainer,
+		showGreetingMessage,
+		showLoadingSpinner,
 		showErrorMessage,
 	};
 })();
