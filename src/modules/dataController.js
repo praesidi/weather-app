@@ -2,6 +2,11 @@ const dataController = (() => {
 	const apiKey = '52a94c4a83484cb1a15122652230904';
 	let userLocation;
 	let currentFormat = 'c';
+	let lastFetchedData = {};
+
+	const getLastFetchedData = () => {
+		return lastFetchedData;
+	};
 
 	const setWeatherFormat = (value) => {
 		currentFormat = value;
@@ -13,7 +18,6 @@ const dataController = (() => {
 
 	const setUserLocation = (position) => {
 		userLocation = position;
-		//console.log(userLocation);
 	};
 
 	const getUserLocation = () => {
@@ -44,10 +48,11 @@ const dataController = (() => {
 				wind_kph: current.wind_kph,
 				wind_mph: current.wind_mph,
 			};
+			lastFetchedData = dataObj;
 
 			return dataObj;
 		} catch (err) {
-			console.log(err);
+			// console.log(err);
 		}
 	};
 
@@ -71,6 +76,7 @@ const dataController = (() => {
 		getWeatherFormat,
 		setWeatherFormat,
 		getWeatherData,
+		getLastFetchedData,
 	};
 })();
 
