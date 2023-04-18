@@ -1,12 +1,11 @@
 import './styles/main.sass';
 import dataController from './modules/dataController';
 import domController from './modules/domController';
-//import handlersController from './modules/handlersController';
+import handlersController from './modules/handlersController';
 
 async function handleGeolocation(position) {
 	dataController.handleUserCoordinates(position);
 	const weatherData = await dataController.getWeatherData();
-	console.log(weatherData);
 	domController.populateWeatherContainer(
 		weatherData,
 		dataController.getWeatherFormat()
@@ -14,7 +13,11 @@ async function handleGeolocation(position) {
 }
 
 function getCurrentPosition() {
-	navigator.geolocation.getCurrentPosition(handleGeolocation);
+	domController.showLoadingSpinner();
+	navigator.geolocation.getCurrentPosition(
+		handleGeolocation,
+		domController.showGreetingMessage
+	);
 }
 
 getCurrentPosition();
